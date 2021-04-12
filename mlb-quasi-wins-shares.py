@@ -27,5 +27,5 @@ plt.xlabel('Year')
 plt.ylabel('WAR (wins above replacement)')
 
 plt.show()
-# print(bestWarPerSeason.year_ID)
+print(mydata[['def_pos', 'pct_PT', 'WAR162']].head(5))
 
