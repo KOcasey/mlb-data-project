@@ -8,24 +8,24 @@ urlfile="https://raw.githubusercontent.com/fivethirtyeight/data/master/mlb-quasi
 
 mydata = pd.read_csv(urlfile)
 
-bestWarPerSeason = mydata.groupby('year_ID', as_index=False)['WAR162'].max()
-bestWarPerSeason = pd.merge(bestWarPerSeason, mydata, on='WAR162')
-bwps_x = bestWarPerSeason['year_ID_x']
-bwps_y = bestWarPerSeason['WAR162']
-plt.scatter(bwps_x, bwps_y, s=10)
+avgWarPerSeason = mydata.groupby('year_ID', as_index=False)['WAR162'].agg(['mean', 'max'])
+avgWarPerSeason = pd.merge(avgWarPerSeason, mydata, left_on='max', right_on='WAR162')
+awps_x = avgWarPerSeason['year_ID']
+awps_y = avgWarPerSeason['mean']
+plt.scatter(awps_x, awps_y, s=10)
 
 # Add trendline
-z = np.polyfit(bwps_x, bwps_y, 1)
+z = np.polyfit(awps_x, awps_y, 1)
 p = np.poly1d(z)
-plt.plot(bwps_x,p(bwps_x),"r--")
+plt.plot(awps_x,p(awps_x),"r--")
 
 #add title
-plt.title('Highest WAR of Each MLB Season Since 1901')
+plt.title('Average WAR of Each MLB Season Since 1901')
 
 #add x and y labels
 plt.xlabel('Year')
 plt.ylabel('WAR (wins above replacement)')
 
 plt.show()
-# print(bestWarPerSeason.columns)
+# print(bestWarPerSeason.year_ID)
 
