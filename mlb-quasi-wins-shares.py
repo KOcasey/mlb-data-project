@@ -30,6 +30,7 @@ mydata = pd.read_csv(urlfile)
 
 # plt.show()
 
+#warPerPos plots data wrangling
 war2019 = mydata.loc[mydata['year_ID'] == 2019]
 war2019SS = war2019.loc[war2019['def_pos'].str.contains('.*SS.*')==True]
 war20192B = war2019.loc[war2019['def_pos'].str.contains('.*2B.*')==True]
@@ -43,10 +44,13 @@ war2019C = war2019.loc[(war2019['def_pos'].str.contains('.*C.*')==True) & (war20
 #Set axis font size
 plt.rcParams['axes.labelsize'] = 10
 
+#Create plots with 2 rows and 4 columns
 fig, axs = plt.subplots(2, 4, sharey=True)
 
+#Format size and layout of subplots
 fig.tight_layout(rect=[0, 0.03, 1, 0.9], pad=0.4, w_pad=0.5, h_pad=5.0)
-# Title the figure
+
+#Title the figure
 fig.suptitle('War Per Position 2019', fontsize=14, fontweight='bold')
 
 plt.sca(axs[0,0])
