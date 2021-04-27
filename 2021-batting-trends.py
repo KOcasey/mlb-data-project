@@ -35,7 +35,8 @@ print(five_yr_avg_ba[five_yr_avg_ba['player_id'] == 425877])
 
 complete_df = pd.merge(data_2021, five_yr_avg_ba, how='outer', on='player_id')
 complete_df = complete_df.assign(current_ba_diff=lambda df: df['ba'] - df['five_yr_ba'])
-print(complete_df[complete_df['player_id'] == 425877])
+complete_df = complete_df[['last_name', 'player_id', 'pa', 'ba','five_yr_ba', 'current_ba_diff']]
+print(complete_df[complete_df['current_ba_diff'] >= 0.075])
 
 
 
