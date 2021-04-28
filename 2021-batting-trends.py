@@ -1,5 +1,5 @@
 #Looks at the luckiest and unluckiest players to start the season
-#to see if people will regress, improve, or keep pace
+#to see if people will regress, improve, or keep pace. Data is from 4/25/21
 
 import numpy as np
 import pandas as pd
@@ -44,5 +44,7 @@ complete_df = complete_df.assign(current_ba_diff=lambda df: df['ba'] - df['five_
 complete_df = complete_df[['last_name', 'player_id', 'pa', 'ba','five_yr_ba', 'current_ba_diff']]
 print(complete_df[complete_df['current_ba_diff'] >= 0.075])
 
+#Buxton(621439), Trout(545361), Olson(621566) for outperforming five_yr_ba by more than 0.075
+#Sano(593934), McCutchen(457705), Freeman(518692) for undeperforming five_yr_ba by more than -0.075
 
 
