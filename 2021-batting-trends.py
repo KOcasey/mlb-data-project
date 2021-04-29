@@ -47,4 +47,40 @@ print(complete_df[complete_df['current_ba_diff'] >= 0.075])
 #Buxton(621439), Trout(545361), Olson(621566) for outperforming five_yr_ba by more than 0.075
 #Sano(593934), McCutchen(457705), Freeman(518692) for undeperforming five_yr_ba by more than -0.075
 
+#Set axis font size
+plt.rcParams['axes.labelsize'] = 10
+
+#Create plots with 2 rows and 4 columns
+fig, axs = plt.subplots(1, 3, sharey=True)
+
+#Format size and layout of subplots
+fig.tight_layout(rect=[0, 0.03, 1, 0.9], pad=0.4, w_pad=0.5, h_pad=5.0)
+
+#Title the Batting Trends figure
+fig.suptitle('Batting Trends', fontsize=14, fontweight='bold')
+
+#Set x axes for all figures
+x = [2016, 2017, 2018, 2019, 2020, 2021]
+
+#Buxton Figure
+#Gets Buxton's 2021 batting average
+buxton_2021_avg = data_2021[data_2021['player_id'] == 621439]
+buxton_2021_avg = buxton_2021_avg['ba']
+
+#Gets the rest of the years batting averages
+#However we are missing 2018 because buxton got hurt and didn't have enough plate appearances to qualify
+buxton_df = combined_df[combined_df['player_id'] == 621439]
+buxton_y = buxton_df['ba'].to_numpy()
+buxton_y = np.append(buxton_y, buxton_2021_avg)
+
+#Insert buxton's 2018 average, it could slightly sway the data as it's not indicative of a full season
+buxton_y = np.insert(buxton_y, 2, 0.156)
+
+plt.sca(axs[0])
+plt.plot(x, buxton_y)
+axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
+axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
+
+
+plt.show()
 
