@@ -64,8 +64,8 @@ x = [2016, 2017, 2018, 2019, 2020, 2021]
 
 #Buxton Figure
 #Gets Buxton's 2021 batting average
-buxton_2021_avg = data_2021[data_2021['player_id'] == 621439]
-buxton_2021_avg = buxton_2021_avg['ba']
+buxton_2021_df = data_2021[data_2021['player_id'] == 621439]
+buxton_2021_avg = buxton_2021_df['ba']
 
 #Gets the rest of the years batting averages
 #However we are missing 2018 because buxton got hurt and didn't have enough plate appearances to qualify
@@ -78,14 +78,15 @@ buxton_y = np.insert(buxton_y, 2, 0.156)
 
 plt.sca(axs[0])
 plt.plot(x, buxton_y)
+plt.plot(2021, buxton_2021_df['est_ba'], 'ro')
 axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
 axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
 
 
 #Trout Figure
 #Gets Trout's 2021 batting average
-trout_2021_avg = data_2021[data_2021['player_id'] == 545361]
-trout_2021_avg = trout_2021_avg['ba']
+trout_2021_df = data_2021[data_2021['player_id'] == 545361]
+trout_2021_avg = trout_2021_df['ba']
 
 #Gets the rest of the years batting averages 2016-2020
 trout_df = combined_df[combined_df['player_id'] == 545361]
@@ -94,14 +95,15 @@ trout_y = np.append(trout_y, trout_2021_avg)
 
 plt.sca(axs[1])
 plt.plot(x, trout_y)
+plt.plot(2021, trout_2021_df['est_ba'], 'ro')
 axs[1].set(title='Mike Trout', xlabel='Year', ylabel='Batting Average')
 axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
 
 
 #J.D. Martinez Figure
 #Gets Martinez's 2021 batting average
-martinez_2021_avg = data_2021[data_2021['player_id'] == 502110]
-martinez_2021_avg = martinez_2021_avg['ba']
+martinez_2021_df = data_2021[data_2021['player_id'] == 502110]
+martinez_2021_avg = martinez_2021_df['ba']
 
 #Gets the rest of the years batting averages 2016-2020
 martinez_df = combined_df[combined_df['player_id'] == 502110]
@@ -110,6 +112,7 @@ martinez_y = np.append(martinez_y, martinez_2021_avg)
 
 plt.sca(axs[2])
 plt.plot(x, martinez_y)
+plt.plot(2021, martinez_2021_df['est_ba'], 'ro')
 axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
 axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
 
