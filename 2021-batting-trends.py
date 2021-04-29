@@ -84,4 +84,3 @@ axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=
 
 plt.show()
 
-
