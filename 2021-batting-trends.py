@@ -116,6 +116,13 @@ plt.plot(2021, martinez_2021_df['est_ba'], 'ro')
 axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
 axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
+#Annotations
+axs[2].annotate(martinez_y[0], xy=(2016.1,0.21), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[1], xy=(2016.4,0.305), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[2], xy=(2018.05,0.332), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[3], xy=(2019.05,0.295), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[4], xy=(2020.4,0.37), xycoords='data', fontsize=8)
+
 #Show the plots
 plt.show()
 
