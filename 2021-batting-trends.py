@@ -80,7 +80,7 @@ plt.sca(axs[0])
 plt.plot(x, buxton_y)
 plt.plot(2021, buxton_2021_df['est_ba'], 'ro')
 axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
-axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
+axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
 
 #Trout Figure
@@ -97,7 +97,7 @@ plt.sca(axs[1])
 plt.plot(x, trout_y)
 plt.plot(2021, trout_2021_df['est_ba'], 'ro')
 axs[1].set(title='Mike Trout', xlabel='Year', ylabel='Batting Average')
-axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
+axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
 
 #J.D. Martinez Figure
@@ -114,7 +114,7 @@ plt.sca(axs[2])
 plt.plot(x, martinez_y)
 plt.plot(2021, martinez_2021_df['est_ba'], 'ro')
 axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
-axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=2)
+axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
 #Show the plots
 plt.show()
