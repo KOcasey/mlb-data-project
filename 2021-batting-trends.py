@@ -82,6 +82,14 @@ plt.plot(2021, buxton_2021_df['est_ba'], 'ro')
 axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
 axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
+#Annotations
+axs[0].annotate(buxton_y[0], xy=(2016,0.248), xycoords='data', fontsize=8)
+axs[0].annotate(buxton_y[1], xy=(2017,0.263), xycoords='data', fontsize=8)
+axs[0].annotate(buxton_y[2], xy=(2017.96,0.15), xycoords='data', fontsize=8)
+axs[0].annotate(buxton_y[3], xy=(2018.95,0.255), xycoords='data', fontsize=8)
+axs[0].annotate(buxton_y[4], xy=(2019.96,0.220), xycoords='data', fontsize=8)
+axs[0].annotate(buxton_y[5], xy=(2020.47,0.383), xycoords='data', fontsize=8)
+
 
 #Trout Figure
 #Gets Trout's 2021 batting average
@@ -98,6 +106,14 @@ plt.plot(x, trout_y)
 plt.plot(2021, trout_2021_df['est_ba'], 'ro')
 axs[1].set(title='Mike Trout', xlabel='Year', ylabel='Batting Average')
 axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
+
+#Annotations
+axs[1].annotate(trout_y[0], xy=(2015.97,0.275), xycoords='data', fontsize=8)
+axs[1].annotate(trout_y[1], xy=(2017.01,0.286), xycoords='data', fontsize=8)
+axs[1].annotate(trout_y[2], xy=(2017.95,0.3135), xycoords='data', fontsize=8)
+axs[1].annotate(trout_y[3], xy=(2019,0.3), xycoords='data', fontsize=8)
+axs[1].annotate(trout_y[4], xy=(2020,0.31), xycoords='data', fontsize=8)
+axs[1].annotate(trout_y[5], xy=(2020.46,0.394), xycoords='data', fontsize=8)
 
 
 #J.D. Martinez Figure
@@ -117,11 +133,12 @@ axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
 axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
 
 #Annotations
-axs[2].annotate(martinez_y[0], xy=(2016.1,0.21), xycoords='data', fontsize=8)
-axs[2].annotate(martinez_y[1], xy=(2016.4,0.305), xycoords='data', fontsize=8)
-axs[2].annotate(martinez_y[2], xy=(2018.05,0.332), xycoords='data', fontsize=8)
-axs[2].annotate(martinez_y[3], xy=(2019.05,0.295), xycoords='data', fontsize=8)
-axs[2].annotate(martinez_y[4], xy=(2020.4,0.37), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[0], xy=(2016,0.208), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[1], xy=(2016.5,0.305), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[2], xy=(2017.95,0.331), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[3], xy=(2018.95,0.297), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[4], xy=(2020,0.302), xycoords='data', fontsize=8)
+axs[2].annotate(martinez_y[5], xy=(2020.6,0.3715), xycoords='data', fontsize=8)
 
 #Show the plots
 plt.show()
