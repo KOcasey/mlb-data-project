@@ -24,6 +24,8 @@ data_2018 = pd.read_csv(urlfile2018)
 data_2017 = pd.read_csv(urlfile2017)
 data_2016 = pd.read_csv(urlfile2016)
 
+#Datawrangling Starts Here
+
 #Create a list of my dataframes from 2016 to 2020 and combine them together
 dfs = [data_2016, data_2017, data_2018, data_2019, data_2020]
 combined_df = pd.concat(dfs, join='inner')
@@ -46,6 +48,8 @@ complete_df = complete_df[['last_name', 'player_id', 'pa', 'ba','five_yr_ba', 'c
 
 #Buxton(621439), Trout(545361), Martinez(502110) for outperforming five_yr_ba by more than 0.075
 #Sano(593934), McCutchen(457705), Freeman(518692) for undeperforming five_yr_ba by more than -0.075
+
+#Plot Creation Starts Here
 
 #Set axis font size
 plt.rcParams['axes.labelsize'] = 10
