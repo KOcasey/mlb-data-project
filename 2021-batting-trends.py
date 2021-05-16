@@ -49,6 +49,7 @@ complete_df = complete_df[['last_name', 'player_id', 'pa', 'ba','five_yr_ba', 'c
 #Buxton(621439), Trout(545361), Martinez(502110) for outperforming five_yr_ba by more than 0.075
 #Sano(593934), McCutchen(457705), Freeman(518692) for undeperforming five_yr_ba by more than -0.075
 
+
 #Plot Creation Starts Here
 
 #Set axis font size
@@ -81,10 +82,12 @@ buxton_y = np.append(buxton_y, buxton_2021_avg)
 buxton_y = np.insert(buxton_y, 2, 0.156)
 
 plt.sca(axs[0])
-plt.plot(x, buxton_y)
+plt.plot(x, buxton_y, label='Batting Avg by Year')
 plt.plot(2021, buxton_2021_df['est_ba'], 'ro')
 axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
-axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
+axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
+#Puts legend in the upper left corner
+axs[0].legend(loc=2)
 
 #Annotations
 axs[0].annotate(buxton_y[0], xy=(2016,0.248), xycoords='data', fontsize=8)
@@ -106,10 +109,12 @@ trout_y = trout_df['ba'].to_numpy()
 trout_y = np.append(trout_y, trout_2021_avg)
 
 plt.sca(axs[1])
-plt.plot(x, trout_y)
+plt.plot(x, trout_y, label='Batting Avg by Year')
 plt.plot(2021, trout_2021_df['est_ba'], 'ro')
 axs[1].set(title='Mike Trout', xlabel='Year', ylabel='Batting Average')
-axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
+axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
+#Puts legend in the upper left corner
+axs[1].legend(loc=2)
 
 #Annotations
 axs[1].annotate(trout_y[0], xy=(2015.97,0.275), xycoords='data', fontsize=8)
@@ -131,10 +136,12 @@ martinez_y = martinez_df['ba'].to_numpy()
 martinez_y = np.append(martinez_y, martinez_2021_avg)
 
 plt.sca(axs[2])
-plt.plot(x, martinez_y)
+plt.plot(x, martinez_y, label='Batting Avg by Year')
 plt.plot(2021, martinez_2021_df['est_ba'], 'ro')
 axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
-axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1)
+axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
+#Puts legend in the upper left corner
+axs[2].legend(loc=2)
 
 #Annotations
 axs[2].annotate(martinez_y[0], xy=(2016,0.208), xycoords='data', fontsize=8)
