@@ -83,7 +83,7 @@ buxton_y = np.insert(buxton_y, 2, 0.156)
 
 plt.sca(axs[0])
 plt.plot(x, buxton_y, label='Batting Avg by Year')
-plt.plot(2021, buxton_2021_df['est_ba'], 'ro')
+plt.plot(2021, buxton_2021_df['est_ba'], 'ro', label='Expected Batting Avg')
 axs[0].set(title='Byron Buxton', xlabel='Year', ylabel='Batting Average')
 axs[0].axhline(y=buxton_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
 #Puts legend in the upper left corner
@@ -110,7 +110,7 @@ trout_y = np.append(trout_y, trout_2021_avg)
 
 plt.sca(axs[1])
 plt.plot(x, trout_y, label='Batting Avg by Year')
-plt.plot(2021, trout_2021_df['est_ba'], 'ro')
+plt.plot(2021, trout_2021_df['est_ba'], 'ro', label='Expected Batting Avg')
 axs[1].set(title='Mike Trout', xlabel='Year', ylabel='Batting Average')
 axs[1].axhline(y=trout_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
 #Puts legend in the upper left corner
@@ -137,7 +137,7 @@ martinez_y = np.append(martinez_y, martinez_2021_avg)
 
 plt.sca(axs[2])
 plt.plot(x, martinez_y, label='Batting Avg by Year')
-plt.plot(2021, martinez_2021_df['est_ba'], 'ro')
+plt.plot(2021, martinez_2021_df['est_ba'], 'ro', label='Expected Batting Avg')
 axs[2].set(title='J.D. Martinez', xlabel='Year', ylabel='Batting Average')
 axs[2].axhline(y=martinez_y[0:4].mean(), color='r', linestyle='dashed', linewidth=1, label='Mean Batting Avg (2016-2020)')
 #Puts legend in the upper left corner
