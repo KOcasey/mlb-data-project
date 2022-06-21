@@ -59,7 +59,7 @@ plt.rcParams['axes.labelsize'] = 10
 fig, axs = plt.subplots(1, 3, sharey=True)
 
 #Format size and layout of subplots
-fig.tight_layout(rect=[0, 0.03, 1, 0.9], pad=0.4, w_pad=0.5, h_pad=5.0)
+fig.tight_layout(rect=[0, 0.1, 1, 0.9], pad=0.4, w_pad=0.5, h_pad=5.0)
 
 #Title the Batting Trends figure
 fig.suptitle('Batting Trends', fontsize=14, fontweight='bold')
@@ -150,6 +150,14 @@ axs[2].annotate(martinez_y[2], xy=(2017.95,0.331), xycoords='data', fontsize=8)
 axs[2].annotate(martinez_y[3], xy=(2018.95,0.297), xycoords='data', fontsize=8)
 axs[2].annotate(martinez_y[4], xy=(2020,0.302), xycoords='data', fontsize=8)
 axs[2].annotate(martinez_y[5], xy=(2020.6,0.3715), xycoords='data', fontsize=8)
+
+#Creates Caption
+txt = '''Buxton's batting avg in 2021 is more than .100 points higher than his mean. This is a massive jump.
+    However, his expected avg is very close to 2021 avg. This suggests that buxton isn't getting lucky
+    and that his avg reflects pretty closely to what he should have. Since his mean avg is so much lower the pace he's
+    currently on probably isn't sustainable, but based on this data he could very well end the season with a much higher
+    avg than normal.'''
+fig.text(0.01, 0.01, txt, wrap=False, horizontalalignment='left', fontsize=10)
 
 #Show the plots
 plt.show()
